@@ -6,7 +6,7 @@ pipeline {
       /* Intended to fail*/
       steps {
         catchError {
-           Some wrong steps here
+           sh 'echo '
         }
         post {
           success {
