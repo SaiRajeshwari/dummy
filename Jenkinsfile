@@ -8,12 +8,10 @@ pipeline {
         Some wrong steps here
       }
     }
-
-    post {
-      always {
-        logstashSend failBuild: true, maxLines: 1000
-      }
+  }
+  post {
+    always {
+      logstashSend failBuild: true, maxLines: 1000
     }
-
   }
 }
