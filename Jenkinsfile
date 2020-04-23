@@ -5,7 +5,17 @@ pipeline {
     stage('Build') {
       /* Intended to fail*/
       steps {
-        Some wrong steps here
+        catchError {
+           Some wrong steps here
+        }
+        post {
+          success {
+             echo 'Build stage successful'
+          }
+          failure {
+             echo 'Build stage failed'
+          }
+        }
       }
     }
   }
