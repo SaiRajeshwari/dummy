@@ -4,6 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh 'echo dummy'
         script {
           if (currentBuild.number % 2 == 0) {
             throw new Exception("Something went wrong!")
