@@ -11,6 +11,7 @@ pipeline {
   }
   post {
     always {
+      echo "Result: ${currentBuild.currentResult}"
       logstashSend failBuild: true, maxLines: 1000
     }
   }
